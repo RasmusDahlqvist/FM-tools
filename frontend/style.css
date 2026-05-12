@@ -1,0 +1,21 @@
+body {
+    color: black;
+}
+h1{
+    color: blue
+}
+
+
+#fixtures {
+    background-color: yellow;
+    border-color: rgb(96, 36, 36);
+    
+    
+    
+}
+.fixture {
+    
+    padding: 10px;
+    border: 2px solid black
+}
+
