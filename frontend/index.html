@@ -11,13 +11,20 @@
     <h1>Futismanageri tools</h1>
     <div id="fixtures"></div>
     
-    <label for="fixtures">Valitse joukkue:</label>
-    <select name="fixtures" id="teamSelect" onchange="showTeam()">
-        <option value="TPS">TPS</option>
-        <option value="HJK">HJK</option>
-        <option value="SJK">SJK</option>
+    <label for="showFixtures"></label>
+    <select name="fixtures" id="gameWeekSelecter" onchange="showWeeks()">
+        <option value="kaikki">Kaikki</option>
+        <option value="next3">Seuraavat 3</option>
+        <option value="next5">Seuraavat 5</option>
+        <option value="next5">Seuraavat 8</option>
     
     </select> 
+
+
+    <div id="ticker-container">
+     
+    <script src="../data/fixtures.js"></script>
+    <script src="../data/teams.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

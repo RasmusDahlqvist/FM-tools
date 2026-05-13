@@ -1,13 +1,21 @@
+*{
+    box-sizing: border-box;
+}
 body {
-    color: black;
+    margin: 0;
+    padding: 32px;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #111827;
 }
 h1{
-    color: blue
+    margin-bottom: 24px;
+    color: #111827;
 }
 
 
 #fixtures {
-    background-color: yellow;
+    background-color: rgb(81, 0, 255);
     border-color: rgb(96, 36, 36);
     
     
@@ -18,4 +26,47 @@ h1{
     padding: 10px;
     border: 2px solid black
 }
+.difficulty-1 {
+     background: #b7e4c7;
+    color: #064e3b;
+}
+.difficulty-2 {
+      background: #ffe8a3;
+      color: #78350f;
+}
+.difficulty-3 {
+    background: #fecaca;
+    color: #7f1d1d;
+}
 
+#ticker-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 900px;
+}
+.flex-container {
+      display: flex;
+     align-items: center;
+    gap: 6px;
+    
+}
+.flex-container > div:first-child {
+    width: 110px;
+    font-weight: 700;
+    background: transparent;
+    color: #111827;
+}
+.flex-container > div:not(:first-child) {
+    width: 90px;
+    min-height: 42px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
