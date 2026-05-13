@@ -15,48 +15,62 @@ const fixtureBox5 = document.createElement("div");
 const fixtureScore = 0; 
 
 
-const weekValue = document.getElementById("gameWeekSelecter");
+const howManyFixtures = document.getElementById("gameWeekSelecter");
+
 function getNextFixtures(teamName, limit) {
     const emptyList = [];
 for(let i = 0; i < fixtures.length; i++) {
-    if(teamName ===  fixtures[i].hometeam) {
-        emptyList.push(fixtures[i].awayteam);
+    if(teamName ===  fixtures[i].hometeam || teamName === fixtures[i].awayteam) {
+        emptyList.push(fixtures[i]);
         if(emptyList.length === limit) {
+            console.log("pituus"+ emptyList.length);
             break;
         }
     }
-     if(teamName ===  fixtures[i].awayteam) {
-        emptyList.push(fixtures[i].hometeam);
-        if(emptyList.length === limit) {
-            break;
-        }
-    }
-    
-    
-   
+     
 }
-emptyList.forEach(element => {
-        console.log(element)
-    });
+
  return emptyList;
 }
+/**if(teamName ===  fixtures[i].awayteam) {
+        emptyList.push(fixtures[i]);
+        if(emptyList.length === limit) {
+            break;
+        }
+    } */
 
-getNextFixtures("HJK", 3);
+//getNextFixtures("HJK", 3);
+
+function showSelectedFixtures() {
+    tickerContainer.innerHTML = "";
+
+teams.forEach(element => {
+    const nextFixturesList = getNextFixtures(element.name,Number(howManyFixtures.value));
+    console.log(nextFixturesList)
+    makeFixturerow(element.name, nextFixturesList);
+    
+});
+
+console.log("weekvalue"+howManyFixtures.value);
+
+
+}
 
 
 
-function makeFixturerow(team) {
+function makeFixturerow(team, fixtureList) {
+    
     const teamRow1 = document.createElement("div");
     const teamNameDiv = document.createElement("div");
     teamRow1.classList.add("flex-container");
     tickerContainer.appendChild(teamRow1);
     teamRow1.appendChild(teamNameDiv);
     teamNameDiv.innerText = team;
-    for(let i = 0; i < fixtures.length; i++) {
-    if(fixtures[i].hometeam === team) {
+    for(let i = 0; i < fixtureList.length; i++) {
+    if(fixtureList[i].hometeam === team) {
          const fixtureBox1 = document.createElement("div");
-        fixtureBox1.innerText = fixtures[i].awayteam;
-        const teamRating = getTeamRating(fixtures[i].awayteam);
+        fixtureBox1.innerText = fixtureList[i].awayteam;
+        const teamRating = getTeamRating(fixtureList[i].awayteam);
         if(teamRating === 1) {
             fixtureBox1.classList.add("difficulty-1");
         }
@@ -69,10 +83,10 @@ function makeFixturerow(team) {
        
         teamRow1.appendChild(fixtureBox1);
     }
-    if(fixtures[i].awayteam === team) {
+    if(fixtureList[i].awayteam === team) {
          const fixtureBox1 = document.createElement("div");
-        fixtureBox1.innerText = fixtures[i].hometeam;
-         const teamRating = getTeamRating(fixtures[i].hometeam);
+        fixtureBox1.innerText = fixtureList[i].hometeam;
+         const teamRating = getTeamRating(fixtureList[i].hometeam);
         if(teamRating === 1) {
             fixtureBox1.classList.add("difficulty-1");
         }
@@ -98,7 +112,7 @@ function getTeamRating(teamName) {
 }
 
 teams.forEach(element => {
-    makeFixturerow(element.name)
+    makeFixturerow(element.name, fixtures);
 });
 
 //getTeamRating("SJK");
@@ -120,22 +134,6 @@ for(let i = 0; i < fixtures.length; i++) {
    
 }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -213,7 +211,4 @@ const showTeam = () => {
 
 }
 
-for (let i = 0; i < teams.length; i++) {
-    console.log("Joukkueiden rating: "+ teams[i].rating)
-}
 
