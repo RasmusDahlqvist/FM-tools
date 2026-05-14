@@ -6,16 +6,19 @@ console.log('Toimii')
 const tickerContainer = document.getElementById("ticker-container");
 
 
-//const fixtureBox1 = document.createElement("div");
+
 const fixtureBox2 = document.createElement("div");
 const fixtureBox3 = document.createElement("div");
 const fixtureBox4 = document.createElement("div");
 const fixtureBox5 = document.createElement("div");
 
+
 const fixtureScore = 0; 
 
 
 const howManyFixtures = document.getElementById("gameWeekSelecter");
+//const limit = Number(howManyFixtures.value);
+const sortSelector = document.getElementById("sortFixtures");
 
 function getNextFixtures(teamName, limit) {
     const emptyList = [];
@@ -29,17 +32,9 @@ for(let i = 0; i < fixtures.length; i++) {
     }
      
 }
-
+console.log("getnexfixture palauttaa :: " + emptyList)
  return emptyList;
 }
-/**if(teamName ===  fixtures[i].awayteam) {
-        emptyList.push(fixtures[i]);
-        if(emptyList.length === limit) {
-            break;
-        }
-    } */
-
-//getNextFixtures("HJK", 3);
 
 function showSelectedFixtures() {
     tickerContainer.innerHTML = "";
@@ -53,13 +48,11 @@ teams.forEach(element => {
 
 console.log("weekvalue"+howManyFixtures.value);
 
-
 }
 
 
 
 function makeFixturerow(team, fixtureList) {
-    
     const teamRow1 = document.createElement("div");
     const teamNameDiv = document.createElement("div");
     teamRow1.classList.add("flex-container");
@@ -115,25 +108,6 @@ teams.forEach(element => {
     makeFixturerow(element.name, fixtures);
 });
 
-//getTeamRating("SJK");
-
-
-/*
-//HJK:n ottelut 
-for(let i = 0; i < fixtures.length; i++) {
-    if(fixtures[i].hometeam === "HJK") {
-         const fixtureBox1 = document.createElement("div");
-        fixtureBox1.innerText = fixtures[i].awayteam;
-        teamRow1.appendChild(fixtureBox1);
-    }
-    if(fixtures[i].awayteam === "HJK") {
-         const fixtureBox1 = document.createElement("div");
-        fixtureBox1.innerText = fixtures[i].hometeam;
-        teamRow1.appendChild(fixtureBox1);
-    }
-   
-}
-*/
 
 
 
@@ -210,5 +184,47 @@ const showTeam = () => {
     }
 
 }
+const scorelist = [];
+function getFixtureScore(team, limit) {
+    let opponentData = 0;
+    const nextFixtures = getNextFixtures(team, limit);
+    let ratingSum = 0; 
+    
+  
+    for(let i = 0; i < nextFixtures.length; i++) {
+        if(nextFixtures[i].awayteam != team) {
+            const opponent = nextFixtures[i].awayteam; 
+            opponentData = teams.find(t => t.name === opponent);
+            ratingSum += opponentData.rating;
+            
+            }
+             if(nextFixtures[i].hometeam != team) {
+            const opponent = nextFixtures[i].hometeam; 
+            opponentData = teams.find(t => t.name === opponent);
+            ratingSum += opponentData.rating;
+            }
+        }
+        scorelist.push({team, ratingSum})
+       // console.log("Opponent data rating: "+ opponentData.rating);
+        console.log("ratingSum joukkue: "+team +" "+ ratingSum); 
+        return scorelist, ratingSum; 
+    }   
 
 
+
+
+function sortFixtures(limit) {
+    teams.forEach(element => {
+        getFixtureScore(element.name,Number(howManyFixtures.value));
+    });
+    scorelist.forEach(element => {
+        console.log("EI JÄRJESTETTY SCORELIST:  "+ element.team + " " + element.ratingSum);
+        
+    });    
+
+    scorelist.sort((a, b) => a.ratingSum - b.ratingSum);
+     scorelist.forEach(element => {
+        console.log("JÄRJESTETTY SCORELIST:  "+ element.team + " " + element.ratingSum);
+        
+    });  
+}  
