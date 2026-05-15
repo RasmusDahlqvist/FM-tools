@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
   <head>
-    
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futismageritools</title>
+    <title>Futismanageritools</title>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <h1>Otteluohjelmavertailu</h1>
-    <div id="fixtures"></div>
-    
-    <label for="showFixtures"></label>
-    <select name="fixtures" id="gameWeekSelecter" onchange="showSelectedFixtures()">
+
+    <div class="controls">
+      <select name="fixtures" id="gameWeekSelecter" onchange="showSelectedFixtures()">
         <option value="3">Seuraavat 3</option>
-        <option value="5">Seuraavat 5</option>
+        <option value="5" selected>Seuraavat 5</option>
         <option value="8">Seuraavat 8</option>
-     </select> 
+      </select>
 
-     <label for="sortFixtures"></label>
-    <select name="sortFixtures" id="sortFixtures" onchange="showSortedFixtures()">
-        <option value="easiest">Helpoin</option>
+      <select name="sortFixtures" id="sortFixtures" onchange="showSortedFixtures()">
+        <option value="easiest" selected>Helpoin</option>
         <option value="hardest">Vaikein</option>
-        <option value="alphabetical">A-Ö</option>
-     </select> 
-
+        <option value="alphabetical">A–Ö</option>
+      </select>
+    </div>
 
     <div id="ticker-container"></div>
-     
+
     <script src="../data/fixtures.js"></script>
     <script src="../data/teams.js"></script>
     <script src="app.js"></script>

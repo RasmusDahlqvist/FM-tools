@@ -1,47 +1,45 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 32px;
-    font-family: Georgia, serif;
+    font-family: Inter, system-ui, sans-serif;
     background: #f4f6f8;
     color: #111827;
 }
-h1{
+
+h1 {
     margin-bottom: 24px;
     font-size: 32px;
     color: #111827;
 }
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 select {
     padding: 8px 12px;
     border-radius: 12px;
     border: 1px solid #d1d5db;
     background: white;
     font-size: 14px;
-    margin-bottom: 20px;
 }
 
-#fixtures {
-    background-color: rgb(81, 0, 255);
-    border-color: rgb(96, 36, 36);
-    
-    
-    
-}
-.fixture {
-    
-    padding: 10px;
-    border: 2px solid black
-}
 .difficulty-1 {
-     background: #b7e4c7;
+    background: #b7e4c7;
     color: #064e3b;
 }
+
 .difficulty-2 {
-      background: #ffe8a3;
-      color: #78350f;
+    background: #ffe8a3;
+    color: #78350f;
 }
+
 .difficulty-3 {
     background: #fecaca;
     color: #7f1d1d;
@@ -53,20 +51,24 @@ select {
     gap: 14px;
     max-width: 1000px;
 }
+
 .flex-container {
-      display: flex;
-     align-items: center;
+    display: flex;
+    align-items: center;
     gap: 6px;
-    
 }
+
 .flex-container > div:first-child {
     width: 110px;
+    min-width: 110px;
     font-weight: 700;
     background: transparent;
     color: #111827;
 }
+
 .flex-container > div:not(:first-child) {
     width: 90px;
+    min-width: 90px;
     min-height: 42px;
     padding: 8px;
     border-radius: 12px;
@@ -77,5 +79,41 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+     
 }
 
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .flex-container {
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .flex-container > div:first-child {
+        min-width: 95px;
+    }
+
+    .flex-container > div:not(:first-child) {
+        min-width: 78px;
+        font-size: 13px;
+        padding: 6px;
+    }
+}

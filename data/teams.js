@@ -57,7 +57,7 @@ const teams = [
     rating: 1
   },
   {
-    name: "IFK Mariehamn",
+    name: "Mariehamn",
     shortName: "MAR",
     rating: 1
   }
