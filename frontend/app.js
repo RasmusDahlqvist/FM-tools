@@ -17,6 +17,7 @@ const fixtureScore = 0;
 
 
 const howManyFixtures = document.getElementById("gameWeekSelecter");
+howManyFixtures.value = "5";
 //const limit = Number(howManyFixtures.value);
 const sortSelector = document.getElementById("sortFixtures");
 
@@ -232,9 +233,9 @@ function sortFixtures(limit) {
     });  
     return scorelist;
 }  
-
+const sortFixturesSelector = document.getElementById("sortFixtures");
 function showSortedFixtures() {
-    const sortFixturesSelector = document.getElementById("sortFixtures");
+    
     tickerContainer.innerHTML = "";
 
     if (sortFixturesSelector.value === "easiest") {
@@ -255,8 +256,21 @@ function showSortedFixtures() {
             makeFixturerow(item.team, fixtureList);
         });
     }
+    if(sortFixturesSelector.value === "alphabetical") {
+        const sortedList = sortFixtures(Number(howManyFixtures.value));
+        sortedList.sort((a, b) => a.team.localeCompare(b.team));
+        sortedList.forEach(item => {
+            const fixtureList = getNextFixtures(item.team, Number(howManyFixtures.value));
+            makeFixturerow(item.team, fixtureList);
+        })
+    }
 }
-    
+   document.addEventListener("DOMContentLoaded", () => {
+    howManyFixtures.value = "5";
+    sortFixtures.value = "easiest";
+
+    showSortedFixtures();
+}); 
   
 
     /*
