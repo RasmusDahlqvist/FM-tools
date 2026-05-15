@@ -21,19 +21,19 @@ const howManyFixtures = document.getElementById("gameWeekSelecter");
 const sortSelector = document.getElementById("sortFixtures");
 
 function getNextFixtures(teamName, limit) {
-    const emptyList = [];
+    const nextFixtures = [];
 for(let i = 0; i < fixtures.length; i++) {
     if(teamName ===  fixtures[i].hometeam || teamName === fixtures[i].awayteam) {
-        emptyList.push(fixtures[i]);
-        if(emptyList.length === limit) {
-            console.log("pituus"+ emptyList.length);
+        nextFixtures.push(fixtures[i]);
+        if(nextFixtures.length === limit) {
+            console.log("pituus"+ nextFixtures.length);
             break;
         }
     }
      
 }
-console.log("getnexfixture palauttaa :: " + emptyList)
- return emptyList;
+console.log("getnexfixture palauttaa :: " + nextFixtures)
+ return nextFixtures;
 }
 
 function showSelectedFixtures() {
@@ -129,7 +129,7 @@ function showSelectedMatches(number) {
 
 
 
-
+/*
 const showTeam = () => {
     const selectTeam = document.getElementById("teamSelect")
     console.log("selected jotai" + selectTeam.value)
@@ -184,11 +184,14 @@ const showTeam = () => {
     }
 
 }
-const scorelist = [];
+
+*/
+
 function getFixtureScore(team, limit) {
-    let opponentData = 0;
+    let opponentData = null;
     const nextFixtures = getNextFixtures(team, limit);
     let ratingSum = 0; 
+    let opponentNames = []; 
     
   
     for(let i = 0; i < nextFixtures.length; i++) {
@@ -196,35 +199,80 @@ function getFixtureScore(team, limit) {
             const opponent = nextFixtures[i].awayteam; 
             opponentData = teams.find(t => t.name === opponent);
             ratingSum += opponentData.rating;
+            opponentNames.push(nextFixtures[i].awayteam);
             
             }
              if(nextFixtures[i].hometeam != team) {
             const opponent = nextFixtures[i].hometeam; 
             opponentData = teams.find(t => t.name === opponent);
             ratingSum += opponentData.rating;
+            opponentNames.push(nextFixtures[i].hometeam);
             }
         }
-        scorelist.push({team, ratingSum})
-       // console.log("Opponent data rating: "+ opponentData.rating);
-        console.log("ratingSum joukkue: "+team +" "+ ratingSum); 
-        return scorelist, ratingSum; 
+        return {team, ratingSum,  opponentNames};  
     }   
 
 
 
 
 function sortFixtures(limit) {
+    let scorelist = [];
     teams.forEach(element => {
-        getFixtureScore(element.name,Number(howManyFixtures.value));
+       scorelist.push(getFixtureScore(element.name,limit));
     });
     scorelist.forEach(element => {
-        console.log("EI JÄRJESTETTY SCORELIST:  "+ element.team + " " + element.ratingSum);
+        //console.log("EI JÄRJESTETTY SCORELIST:  "+ element.team + " " + element.ratingSum);
         
     });    
 
     scorelist.sort((a, b) => a.ratingSum - b.ratingSum);
      scorelist.forEach(element => {
-        console.log("JÄRJESTETTY SCORELIST:  "+ element.team + " " + element.ratingSum);
+        //console.log("JÄRJESTETTY SCORELIST:  "+ element.team + " " + element.ratingSum);
         
     });  
+    return scorelist;
 }  
+
+function showSortedFixtures() {
+    const sortFixturesSelector = document.getElementById("sortFixtures");
+    tickerContainer.innerHTML = "";
+
+    if (sortFixturesSelector.value === "easiest") {
+        const sortedList = sortFixtures(Number(howManyFixtures.value));
+
+        sortedList.forEach(item => {
+            const fixtureList = getNextFixtures(item.team, Number(howManyFixtures.value));
+            makeFixturerow(item.team, fixtureList);
+        });
+    }
+
+    if (sortFixturesSelector.value === "hardest") {
+        const sortedList = sortFixtures(Number(howManyFixtures.value));
+        sortedList.reverse();
+
+        sortedList.forEach(item => {
+            const fixtureList = getNextFixtures(item.team, Number(howManyFixtures.value));
+            makeFixturerow(item.team, fixtureList);
+        });
+    }
+}
+    
+  
+
+    /*
+    tickerContainer.innerHTML = "";
+    let d;
+    const s = sortFixtures(Number(howManyFixtures.value));
+    teams.forEach(element => {
+         d = getFixtureScore(element.name, Number(howManyFixtures.value)); 
+    });
+    
+
+d.fixtures.forEach(element => {
+    //const nextFixturesList = getNextFixtures(element.name,Number(howManyFixtures.value));
+    console.log("!!!! " + d.name + " " + d.fixtures)
+    makeFixturerow(element.name, d.fixtures);
+    
+   
+});
+*/
