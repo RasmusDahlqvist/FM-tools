@@ -64,6 +64,7 @@ function makeFixturerow(team, fixtureList) {
     if(fixtureList[i].hometeam === team) {
          const fixtureBox1 = document.createElement("div");
         fixtureBox1.innerText = fixtureList[i].awayteam;
+        fixtureBox1.innerText += " (K)";
         const teamRating = getTeamRating(fixtureList[i].awayteam);
         if(teamRating === 1) {
             fixtureBox1.classList.add("difficulty-1");
@@ -80,6 +81,7 @@ function makeFixturerow(team, fixtureList) {
     if(fixtureList[i].awayteam === team) {
          const fixtureBox1 = document.createElement("div");
         fixtureBox1.innerText = fixtureList[i].hometeam;
+        fixtureBox1.innerText += " (V)";
          const teamRating = getTeamRating(fixtureList[i].hometeam);
         if(teamRating === 1) {
             fixtureBox1.classList.add("difficulty-1");

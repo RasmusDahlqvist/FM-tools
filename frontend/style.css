@@ -67,8 +67,8 @@ select {
 }
 
 .flex-container > div:not(:first-child) {
-    width: 90px;
-    min-width: 90px;
+    width: 110px;
+    min-width: 110px;
     min-height: 42px;
     padding: 8px;
     border-radius: 12px;
@@ -79,6 +79,9 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
+    white-space: nowrap;
      
 }
 
@@ -112,8 +115,12 @@ select {
     }
 
     .flex-container > div:not(:first-child) {
-        min-width: 78px;
-        font-size: 13px;
-        padding: 6px;
-    }
+            min-width: 88px;
+            width: 88px;
+            font-size: 12px;
+            padding: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
 }
+        
+    }
