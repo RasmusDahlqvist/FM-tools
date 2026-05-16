@@ -38,7 +38,7 @@ const teams = [
   {
     name: "SJK",
     shortName: "SJK",
-    rating: 2
+    rating: 1
   },
 
   {
@@ -54,7 +54,7 @@ const teams = [
   {
     name: "Gnistan",
     shortName: "GNS",
-    rating: 1
+    rating: 2
   },
   {
     name: "Mariehamn",
