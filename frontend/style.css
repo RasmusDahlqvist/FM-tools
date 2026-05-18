@@ -85,6 +85,14 @@ select {
      
 }
 
+.info {
+       margin-top: 16px;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.4;
+    max-width: 700px;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 16px;
@@ -122,5 +130,9 @@ select {
             white-space: nowrap;
             flex-shrink: 0;
 }
+    .info {
+         font-size: 12px;
+        margin-top: 14px;
+    }
         
     }

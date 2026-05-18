@@ -52,7 +52,7 @@ const fixtures = [
 
   { date: "2026-07-10", time: "19:00", hometeam: "VPS", awayteam: "SJK" },
   { date: "2026-07-11", time: "15:00", hometeam: "FC Lahti", awayteam: "HJK" },
-  { date: "2026-07-11", time: "17:00", hometeam: "Gnistan", awayteam: "IFK Mariehamn" },
+  { date: "2026-07-11", time: "17:00", hometeam: "Gnistan", awayteam: "Mariehamn" },
   { date: "2026-07-11", time: "17:00", hometeam: "TPS", awayteam: "AC Oulu" },
 
   { date: "2026-07-18", time: "15:00", hometeam: "HJK", awayteam: "VPS" },
