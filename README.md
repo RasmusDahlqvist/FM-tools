@@ -15,13 +15,7 @@ Sovellus järjestää joukkueet helpoimman tai vaikeimman otteluohjelman mukaan 
 
 ## Miten difficulty rating toimii?
 
-Tällä hetkellä ottelun vaikeus perustuu vastustajan sarjasijoitukseen.
-
-Tulevaisuudessa tarkoitus on kehittää tarkempi ranking-järjestelmä, jossa huomioitaisiin esimerkiksi:
-- joukkueen vire
-- tehdyt ja päästetyt maalit
-- koti- ja vierasvahvuus
-- viimeisimmät ottelut
+Ottelun vaikeus perustuu tällä hetkellä vastustajan sarjapisteisiin, tehtyihin ja päästettyihin maaleihin sekä koti-/vierasetuun.
 
 ## Teknologiat
 
