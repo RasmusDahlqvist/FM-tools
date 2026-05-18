@@ -44,17 +44,17 @@ const teams = [
     name: "VPS",
     shortName: "VPS",
     rating: 2,
-    goalsScored: 5,
-    goalsConceded: 4,
-    points: 9
+    goalsScored: 6,
+    goalsConceded: 5,
+    points: 10
   },
   {
     name: "FC Lahti",
     shortName: "LAHTI",
     rating: 2,
-    goalsScored: 5,
-    goalsConceded: 7,
-    points: 7
+    goalsScored: 6,
+    goalsConceded: 8,
+    points: 8
   },
   {
     name: "SJK",
