@@ -13,9 +13,17 @@ Sovellus järjestää joukkueet helpoimman tai vaikeimman otteluohjelman mukaan 
 - Mobiiliystävällinen käyttöliittymä
 - Värikoodatut fixture difficulty -ratingit
 
-## Miten difficulty rating toimii?
+## Miten otteluiden vaikeus lasketaan?
 
-Ottelun vaikeus perustuu tällä hetkellä vastustajan sarjapisteisiin, tehtyihin ja päästettyihin maaleihin sekä koti-/vierasetuun.
+Otteluiden vaikeus perustuu joukkueiden kokonaisvahvuuteen. Rankingissa huomioidaan tällä hetkellä:
+
+- sarjapisteet
+- tehdyt maalit
+- päästetyt maalit
+- viime otteluiden vire
+- koti- ja vierasetu
+
+Joukkueiden vahvuuksia verrataan toisiinsa, minkä perusteella tulevat ottelut luokitellaan helpoiksi, keskivaikeiksi tai vaikeiksi.
 
 ## Teknologiat
 
