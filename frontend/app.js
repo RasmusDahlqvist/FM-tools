@@ -29,10 +29,40 @@ const sortSelector = document.getElementById("sortFixtures");
 + (12 - leaguePosition)
 - goalsConceded*/
 
+function getTeamForm(team) {
+    return(team.form);
+   
+}
+
+function calculateWeightedForm() {
+    const weightedForms = []
+    let weightedForm = 0;
+  for(let i = 0; i < teams.length; i++){
+    for(let j = 0; j < teams[i].form.length; j++) {
+        weightedForm +=  ((teams[i].form[j] * 5) / 15)  
+    }
+    weightedForms.push({name: teams[i].name, weightedForm: weightedForm });
+    weightedForm = 0;
+
+  }
+  console.log(weightedForms);
+  return weightedForms;
+}
+
+
+function getFormModiefier(team) {
+    const list = calculateWeightedForm();
+    const formData = list.find(item => item.name === team.name);
+   if(formData) {
+    return formData.weightedForm;
+   }
+   return 0; 
+}
+
 
 function getTeamsStrength() {
     teams.forEach(team => {
-        const strength = team.goalsScored-team.goalsConceded+team.points;
+        const strength = team.goalsScored-team.goalsConceded+team.points+(getFormModiefier(team)*2);
         // console.log(team.name," : " ,strength);
     });
 }
@@ -49,7 +79,7 @@ function sortTeamsStrengths() {
         teamStrengthList.push({name: team.name, strength: getTeamStrength(team)});     
     });
      teamStrengthList.sort((a, b) => b.strength - a.strength);
-     console.log(teamStrengthList);
+    // console.log(teamStrengthList);
      return teamStrengthList;
 }
 
@@ -112,21 +142,8 @@ function makeFixturerow(team, fixtureList) {
          const fixtureBox1 = document.createElement("div");
         fixtureBox1.innerText = fixtureList[i].awayteam;
         fixtureBox1.innerText += " (K)";
-       // const teamRating = getTeamRating(fixtureList[i].awayteam);
        const difficultyClass = getDifficultyClassByStrength(fixtureList[i].awayteam);
        fixtureBox1.classList.add(difficultyClass);
-       /*
-       if(teamRating === 1) {
-            
-        }
-        
-        if(teamRating === 2) {
-            fixtureBox1.classList.add("difficulty-2");
-        }
-        if(teamRating === 3) {
-            fixtureBox1.classList.add("difficulty-3");
-        }
-       */
         teamRow1.appendChild(fixtureBox1);
     }
     if(fixtureList[i].awayteam === team) {
@@ -134,19 +151,7 @@ function makeFixturerow(team, fixtureList) {
         fixtureBox1.innerText = fixtureList[i].hometeam;
         fixtureBox1.innerText += " (V)";
         const difficultyClass = getDifficultyClassByStrength(fixtureList[i].hometeam);
-       fixtureBox1.classList.add(difficultyClass);
-       /*
-         const teamRating = getTeamRating(fixtureList[i].hometeam);
-        if(teamRating === 1) {
-            fixtureBox1.classList.add("difficulty-1");
-        }
-        if(teamRating === 2) {
-            fixtureBox1.classList.add("difficulty-2");
-        }
-        if(teamRating === 3) {
-            fixtureBox1.classList.add("difficulty-3");
-        }
-            */
+        fixtureBox1.classList.add(difficultyClass);
         teamRow1.appendChild(fixtureBox1);
     }
    
@@ -324,20 +329,3 @@ function showSortedFixtures() {
 }); 
   
 
-    /*
-    tickerContainer.innerHTML = "";
-    let d;
-    const s = sortFixtures(Number(howManyFixtures.value));
-    teams.forEach(element => {
-         d = getFixtureScore(element.name, Number(howManyFixtures.value)); 
-    });
-    
-
-d.fixtures.forEach(element => {
-    //const nextFixturesList = getNextFixtures(element.name,Number(howManyFixtures.value));
-    console.log("!!!! " + d.name + " " + d.fixtures)
-    makeFixturerow(element.name, d.fixtures);
-    
-   
-});
-*/

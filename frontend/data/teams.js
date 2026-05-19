@@ -6,7 +6,8 @@ const teams = [
     rating: 3,
     goalsScored: 11,
     goalsConceded: 5,
-    points: 17
+    points: 17,
+    form: [3,3,0,1,3]
   },
   {
     name: "AC Oulu",
@@ -14,7 +15,8 @@ const teams = [
     rating: 3,
     goalsScored: 13,
     goalsConceded: 7,
-    points: 15
+    points: 15,
+    form:[3,0,3,0,0]
   },
   {
     name: "TPS",
@@ -22,7 +24,8 @@ const teams = [
     rating: 3,
     goalsScored: 9,
     goalsConceded: 6,
-    points: 12
+    points: 12,
+    form: [0,3,1,1,3]
   },
   {
     name: "KuPS",
@@ -30,7 +33,8 @@ const teams = [
     rating: 3,
     goalsScored: 10,
     goalsConceded: 8,
-    points: 13
+    points: 13,
+    form: [1,1,0,1,3]
   },
   {
     name: "HJK",
@@ -38,7 +42,8 @@ const teams = [
     rating: 2,
     goalsScored: 11,
     goalsConceded: 6,
-    points: 12
+    points: 12,
+    form: [1,0,3,1,1]
   },
   {
     name: "VPS",
@@ -46,7 +51,8 @@ const teams = [
     rating: 2,
     goalsScored: 6,
     goalsConceded: 5,
-    points: 10
+    points: 10,
+    form: [1,1,3,3,0]
   },
   {
     name: "FC Lahti",
@@ -54,7 +60,8 @@ const teams = [
     rating: 2,
     goalsScored: 6,
     goalsConceded: 8,
-    points: 8
+    points: 8,
+    form: [1,1,0,3,0]
   },
   {
     name: "SJK",
@@ -62,7 +69,8 @@ const teams = [
     rating: 1,
     goalsScored: 6,
     goalsConceded: 10,
-    points: 6
+    points: 6,
+    form: [0,1,1,1,0]
   },
   {
     name: "Ilves",
@@ -70,7 +78,8 @@ const teams = [
     rating: 1,
     goalsScored: 10,
     goalsConceded: 13,
-    points: 6
+    points: 6,
+    form:[1,3,1,0,1]
   },
   {
     name: "Jaro",
@@ -78,7 +87,8 @@ const teams = [
     rating: 1,
     goalsScored: 4,
     goalsConceded: 12,
-    points: 4
+    points: 4,
+    form:[0,0,1,1,1]
   },
   {
     name: "Gnistan",
@@ -86,7 +96,8 @@ const teams = [
     rating: 2,
     goalsScored: 10,
     goalsConceded: 11,
-    points: 8
+    points: 8,
+    form: [3,1,3,1,0]
   },
   {
     name: "Mariehamn",
@@ -94,6 +105,7 @@ const teams = [
     rating: 1,
     goalsScored: 5,
     goalsConceded: 10,
-    points: 4
+    points: 4,
+    form:[1,1,0,0,1]
   }
 ];
