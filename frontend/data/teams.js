@@ -4,10 +4,10 @@ const teams = [
     name: "FC Inter",
     shortName: "INT",
     rating: 3,
-    goalsScored: 11,
-    goalsConceded: 5,
-    points: 17,
-    form: [3,3,0,1,3]
+    goalsScored: 14,
+    goalsConceded: 6,
+    points: 20,
+    form: [3,3,3,0,1]
   },
   {
     name: "AC Oulu",
@@ -31,10 +31,10 @@ const teams = [
     name: "KuPS",
     shortName: "KUPS",
     rating: 3,
-    goalsScored: 10,
+    goalsScored: 13,
     goalsConceded: 8,
-    points: 13,
-    form: [1,1,0,1,3]
+    points: 16,
+    form: [3,1,1,0,1]
   },
   {
     name: "HJK",
@@ -76,19 +76,19 @@ const teams = [
     name: "Ilves",
     shortName: "ILV",
     rating: 1,
-    goalsScored: 10,
-    goalsConceded: 13,
+    goalsScored: 11,
+    goalsConceded: 16,
     points: 6,
-    form:[1,3,1,0,1]
+    form:[0,1,3,1,0]
   },
   {
     name: "Jaro",
     shortName: "JARO",
     rating: 1,
     goalsScored: 4,
-    goalsConceded: 12,
+    goalsConceded: 15,
     points: 4,
-    form:[0,0,1,1,1]
+    form:[0,0,0,1,1]
   },
   {
     name: "Gnistan",

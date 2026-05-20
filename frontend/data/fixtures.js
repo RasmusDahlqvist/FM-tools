@@ -1,6 +1,4 @@
 const fixtures = [
-  { date: "2026-05-20", time: "18:00", hometeam: "Ilves", awayteam: "FC Inter" },
-  { date: "2026-05-20", time: "19:00", hometeam: "KuPS", awayteam: "Jaro" },
   { date: "2026-05-22", time: "19:00", hometeam: "VPS", awayteam: "HJK" },
   { date: "2026-05-23", time: "14:00", hometeam: "FC Inter", awayteam: "TPS" },
   { date: "2026-05-23", time: "17:00", hometeam: "Jaro", awayteam: "Mariehamn" },
