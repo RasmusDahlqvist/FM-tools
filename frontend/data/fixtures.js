@@ -1,11 +1,5 @@
 const fixtures = [
-  { date: "2026-05-22", time: "19:00", hometeam: "VPS", awayteam: "HJK" },
-  { date: "2026-05-23", time: "14:00", hometeam: "FC Inter", awayteam: "TPS" },
-  { date: "2026-05-23", time: "17:00", hometeam: "Jaro", awayteam: "Mariehamn" },
-  { date: "2026-05-23", time: "17:00", hometeam: "Ilves", awayteam: "Gnistan" },
-  { date: "2026-05-23", time: "17:00", hometeam: "KuPS", awayteam: "FC Lahti" },
-  { date: "2026-05-23", time: "17:00", hometeam: "SJK", awayteam: "AC Oulu" },
-
+  
   { date: "2026-05-30", time: "15:00", hometeam: "HJK", awayteam: "Mariehamn" },
   { date: "2026-05-30", time: "17:00", hometeam: "Gnistan", awayteam: "SJK" },
   { date: "2026-05-30", time: "17:00", hometeam: "KuPS", awayteam: "FC Inter" },
