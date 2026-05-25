@@ -6,7 +6,7 @@ const teams = [
     rating: 3,
     goalsScored: 14,
     goalsConceded: 6,
-    points: 20,
+    points: 23,
     form: [3,3,3,0,1]
   },
   {
@@ -15,7 +15,7 @@ const teams = [
     rating: 3,
     goalsScored: 13,
     goalsConceded: 7,
-    points: 15,
+    points: 18,
     form:[3,0,3,0,0]
   },
   {
@@ -33,7 +33,7 @@ const teams = [
     rating: 3,
     goalsScored: 13,
     goalsConceded: 8,
-    points: 16,
+    points: 19,
     form: [3,1,1,0,1]
   },
   {
@@ -51,7 +51,7 @@ const teams = [
     rating: 2,
     goalsScored: 6,
     goalsConceded: 5,
-    points: 10,
+    points: 13,
     form: [1,1,3,3,0]
   },
   {
@@ -78,7 +78,7 @@ const teams = [
     rating: 1,
     goalsScored: 11,
     goalsConceded: 16,
-    points: 6,
+    points: 9,
     form:[0,1,3,1,0]
   },
   {
@@ -87,7 +87,7 @@ const teams = [
     rating: 1,
     goalsScored: 4,
     goalsConceded: 15,
-    points: 4,
+    points: 7,
     form:[0,0,0,1,1]
   },
   {
