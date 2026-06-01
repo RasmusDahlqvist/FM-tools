@@ -4,73 +4,73 @@ const teams = [
     name: "FC Inter",
     shortName: "INT",
     rating: 3,
-    goalsScored: 16,
-    goalsConceded: 7,
-    points: 23,
-    form: [3,3,3,3,0]
+    goalsScored: 17,
+    goalsConceded: 8,
+    points: 24,
+    form: [1,3,3,3,3]
   },
   {
     name: "AC Oulu",
     shortName: "OUL",
     rating: 3,
-    goalsScored: 14,
-    goalsConceded: 7,
-    points: 18,
-    form:[3,3,0,3,0]
+    goalsScored: 16,
+    goalsConceded: 8,
+    points: 21,
+    form:[3,3,3,0,3]
   },
   {
     name: "TPS",
     shortName: "TPS",
     rating: 3,
-    goalsScored: 10,
+    goalsScored: 11,
     goalsConceded: 8,
-    points: 12,
-    form: [0,0,3,1,1]
+    points: 15,
+    form: [3,0,0,3,1]
   },
   {
     name: "KuPS",
     shortName: "KUPS",
     rating: 3,
-    goalsScored: 15,
-    goalsConceded: 9,
-    points: 19,
-    form: [3,3,1,1,0]
+    goalsScored: 16,
+    goalsConceded: 10,
+    points: 20,
+    form: [1,3,3,1,1]
   },
   {
     name: "HJK",
     shortName: "HJK",
     rating: 2,
-    goalsScored: 12,
+    goalsScored: 13,
     goalsConceded: 8,
-    points: 12,
-    form: [0,1,0,3,1]
+    points: 15,
+    form: [3,0,1,0,3]
   },
   {
     name: "VPS",
     shortName: "VPS",
     rating: 2,
     goalsScored: 8,
-    goalsConceded: 6,
+    goalsConceded: 7,
     points: 13,
-    form: [3,1,1,3,3]
+    form: [0,3,1,1,3]
   },
   {
     name: "FC Lahti",
     shortName: "LAHTI",
     rating: 2,
-    goalsScored: 7,
+    goalsScored: 12,
     goalsConceded: 10,
-    points: 8,
-    form: [0,1,1,0,3]
+    points: 11,
+    form: [3,0,1,1,0]
   },
   {
     name: "SJK",
     shortName: "SJK",
     rating: 1,
-    goalsScored: 6,
-    goalsConceded: 11,
+    goalsScored: 8,
+    goalsConceded: 14,
     points: 6,
-    form: [0,0,1,1,1]
+    form: [0,0,0,1,1]
   },
   {
     name: "Ilves",
@@ -79,33 +79,33 @@ const teams = [
     goalsScored: 13,
     goalsConceded: 16,
     points: 9,
-    form:[3,0,1,3,1]
+    form:[0,3,0,1,3]
   },
   {
     name: "Jaro",
     shortName: "JARO",
     rating: 1,
-    goalsScored: 7,
-    goalsConceded: 15,
+    goalsScored: 8,
+    goalsConceded: 17,
     points: 7,
-    form:[3,0,0,0,1]
+    form:[0,0,0,3,0]
   },
   {
     name: "Gnistan",
     shortName: "GNS",
     rating: 2,
-    goalsScored: 10,
-    goalsConceded: 13,
-    points: 8,
-    form: [0,3,1,3,1]
+    goalsScored: 13,
+    goalsConceded: 15,
+    points: 11,
+    form: [3,0,3,1,3]
   },
   {
     name: "Mariehamn",
     shortName: "MAR",
     rating: 1,
     goalsScored: 5,
-    goalsConceded: 13,
+    goalsConceded: 14,
     points: 4,
-    form:[0,1,1,0,0]
+    form:[0,0,1,1,0]
   }
 ];
